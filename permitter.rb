@@ -95,9 +95,9 @@ class Permitter < Thor
       $logger.info "(2/6) selecting daily reservation"
       page = page.link_with(:href => "/bart/reservations/facilities/?type=daily").click
 
-      $logger.info "(3/6) selecting lafayette station"
+      $logger.info "(3/6) selecting Oringa station"
       page = page.form_with(:action => "/bart/reservations/date/") do |form|
-        form.radiobutton_with(:id => "type_id_40").check
+        form.radiobutton_with(:id => "type_id_37").check
       end.submit
 
       $logger.info "(4/6) attempting to reserve #{date}"
